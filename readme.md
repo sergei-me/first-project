@@ -57,10 +57,11 @@ git init
 
 _при необходимости сослаться на последний коммит можно писать HEAD вместо хеш_
 
+# Статусы файлов в GIT
 
 ```mermaid
 graph LR;
-  new file -- "created" --> untracked;
+  newfile -- "created" --> untracked;
   untracked -- "git add" --> staged;
   staged    -- "git commit"     --> tracked/comitted;
   tracked/comitted -- "make changes" --> modified;
