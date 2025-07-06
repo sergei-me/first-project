@@ -82,5 +82,80 @@ git commit --amend --no-edit
 git commit --amend -m "Обновлённое сообщение коммита"
 ```
 
+# Откатиться назад - отмена изменений
 
+## Unstage изменений 
+
+если нужно убрать файл, добавленный на коммит с помощью *git add*
+
+```
+git restore --staged <file>
+```
+
+### Пример:
+
+```
+$ touch example.txt # создали ненужный файл
+$ git add example.txt # добавили его в staged
+
+$ git status # проверили статус
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   example.txt
+
+$ git restore --staged example.txt
+$ git status # проверили статус
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        example.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+# файл example.txt из staged вернулся обратно в untracked
+```
+
+команда *git restore* без указания файла сбросит всю текущую папку
+
+## Откатить коммит - вернуть состояние реппозитория до коммита
+
+```
+git reset --hard <commit hash>
+```
+### Пример:
+
+```
+$ git log --oneline # хеш можно найти в истории
+7b972f5 (HEAD -> master) style: добавить комментарии, расставить отступы
+b576d89 feat: добавить массив Expenses и цикл для добавления трат # вот сюда и вернёмся
+4b58962 refactor: разделить analyzeExpenses() на countSum() и saveExpenses()
+
+$ git reset --hard b576d89
+# теперь мы на этом коммите
+HEAD is now at b576d89 feat: добавить массив Expenses и цикл для добавления трат
+```
+
+## Откатить изменения файла
+
+Если файл был изменен но еще не отправлен в статус *staged*
+
+```
+git restore <file>
+```
+
+### Пример:
+
+```
+# случайно изменили файл example.txt
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+          modified:   example.txt
+
+$ git restore example.txt
+$ git status
+On branch main
+nothing to commit, working tree clean
+```
 
