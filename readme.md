@@ -159,3 +159,18 @@ On branch main
 nothing to commit, working tree clean
 ```
 
+# Просмотреть изменения в файлах
+
+### для файлов в статусе *modified*
+
+```
+git diff
+```
+
+### для файлов в статусе *staged*
+
+```
+git diff --staged
+```
+
+
