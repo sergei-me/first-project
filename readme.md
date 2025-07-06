@@ -57,13 +57,30 @@ git init
 
 _при необходимости сослаться на последний коммит можно писать HEAD вместо хеш_
 
+# Статусы файлов в GIT
 
 ```mermaid
 graph LR;
-  new file -- "created" --> untracked;
+  newfile -- "created" --> untracked;
   untracked -- "git add" --> staged;
   staged    -- "git commit"     --> tracked/comitted;
   tracked/comitted -- "make changes" --> modified;
   modified -- "git add" --> staged;
 ```
+
+# Изменения последнего коммита
+
+## Флаг --amend
+
+```
+%% дополнить коммит новыми файлами
+git commit --amend --no-edit
+
+%% --no-edit - сообщение к коммиту остается неизменным
+
+%% дополнить коммит новыми файлами и обновить сообщение
+git commit --amend -m "Обновлённое сообщение коммита"
+```
+
+
 
