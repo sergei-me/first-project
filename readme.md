@@ -57,7 +57,7 @@ git init
 
 _при необходимости сослаться на последний коммит можно писать HEAD вместо хеш_
 
-'''mermaind
+'''mermaid
 graph LR;
   new file -- "created" --> untracked;
   untracked -- "git add" --> staged;
