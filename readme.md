@@ -238,3 +238,10 @@ docs/*/tmp
 ```
 $ git clone git@github.com:yandex-praktikum/git-clone-practice.git
 ```
+# Ветки
+
+```
+git branch
+```
+
+- посмотреть список веток. * - где находишься
