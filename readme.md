@@ -293,3 +293,24 @@ git branch -D <название_ветки>
 # "мягкое" удаление -d (--delite)
 git branch -d <название_ветки>
 ```
+# Загрузка новой ветки из локального репозитория
+
+### Пример:
+
+```
+# отправить новую ветку в github
+$ git push -u origin feature/merge-request
+
+# в консоль будет выведено такое сообщение:
+$ git push -u origin feature/merge-request
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'feature/merge-request' on GitHub by visiting:
+remote:      https://github.com/%ВАШ_АККАУНТ%/git-branches/pull/new/feature/merge-request
+remote: 
+To github.com:%ВАШ_АККАУНТ%/git-branches.git
+ * [new branch]      feature/merge-request -> feature/merge-request
+branch 'feature/merge-request' set up to track 'origin/feature/merge-request'.
+```
+
+
