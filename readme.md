@@ -27,6 +27,71 @@ git init
 ```
 Это лишь некоторые функции markdown.
 
+# Инициализация репозитория
+
+```
+# перейти в нужную папку
+cd ~/dev/first-project/
+
+# сделать папку рапозиторием
+git init
+```
+
+# Отменить папку репозиторием
+
+для этого необходимо удалить папку .git
+
+```
+rm -rf /git
+```
+
+# Состояние репозитория
+
+```
+git status
+```
+Выводиит:
+- название текущей ветки: On branch master или On branch main
+- сообщение о том, что в репозитории ещё нет коммитов: No commits yet
+- сообщение, которое говорит: «чтобы что-нибудь закоммитить (то есть зафиксировать), нужно сначала это создать» — nothing to commit (create/copy files and use "git add" to track)
+
+
+# Подготовка файлов к сохранению
+
+```
+git add --all # подготовить все файлы
+
+git add readme.md # подготовить конкретный файл
+
+git add . # подготовить всю текущую папку
+```
+
+# Добавить коммит
+
+```
+git commit -m 'my first commit' # сделать коммит с сообщением '...'
+```
+
+## информация о коммите
+
+```
+git commit
+```
+
+# Связать локальный и удаленный репозитории
+
+```
+# перейти в папку локального репозитория и ввести:
+git remote add origin git@github.com:%ИМЯ_АККАУНТА%/first-project.git
+```
+### убедиться, что реппозитории связаны
+
+```
+$ git remote -v
+origin    git@github.com:%ИМЯ_АККАУНТА%/%ИМЯ-ПРОЕКТА%.git (fetch)
+origin    git@github.com:%ИМЯ_АККАУНТА%/%ИМЯ-ПРОЕКТА%.git (push)
+```
+
 # Хеш (hash)
 
 - это информация о коммите в зашифрованном по алгоритму SHA-1 формате
@@ -311,6 +376,14 @@ remote:
 To github.com:%ВАШ_АККАУНТ%/git-branches.git
  * [new branch]      feature/merge-request -> feature/merge-request
 branch 'feature/merge-request' set up to track 'origin/feature/merge-request'.
+```
+
+
+# Забрать изменения из удаленного репозитороия
+
+```
+# перейти в главную ветку
+$ git pull
 ```
 
 
